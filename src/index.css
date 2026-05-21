@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+body {
+  @apply bg-gradient-to-br from-duckie-light via-white to-yellow-50 min-h-screen;
+}
+
+.duckie-bubble {
+  @apply bg-duckie-yellow rounded-full shadow-lg;
+  animation: bounce_soft 3s ease-in-out infinite;
+}
+
+.step-indicator {
+  @apply bg-duckie-yellow text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm;
+}
+
+.chat-message {
+  @apply p-4 rounded-xl shadow-md;
+}
+
+.chat-message.user {
+  @apply bg-duckie-accent text-white ml-auto max-w-xs;
+}
+
+.chat-message.assistant {
+  @apply bg-white border-2 border-duckie-yellow max-w-sm;
+}
+
+.loading-dots {
+  @apply flex gap-2;
+}
+
+.loading-dots span {
+  @apply w-2 h-2 bg-duckie-yellow rounded-full;
+  animation: pulse 1.4s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
